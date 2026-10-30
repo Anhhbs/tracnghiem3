@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phần VII. Trò chơi củng cố kiến thức: Phong cách chức năng ngôn ngữ chính luận</title>
+    <title>VII. Câu hỏi: Phong cách chức năng ngôn ngữ chính luận</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts hỗ trợ tiếng Việt sắc nét cho trình chiếu -->
@@ -21,20 +21,23 @@
                         sans: ['"Be Vietnam Pro"', 'sans-serif'],
                     },
                     colors: {
-                        ocean: {
-                            950: '#041022',
-                            900: '#071c39',
-                            800: '#0c2d57',
-                            700: '#13447e',
-                            600: '#1b60a8',
-                            500: '#2780d6',
-                            400: '#49a3f2',
-                            300: '#7cc2f9',
+                        jade: {
+                            950: '#0a2e2a',
+                            900: '#0f3d38',
+                            800: '#115e56',
+                            700: '#16796f',
+                            600: '#1d9a8c',
+                            500: '#1ec773',
+                            400: '#4ade80',
+                            100: '#dff8f6',
+                            50: '#f2fbe4',
                         },
-                        gold: {
-                            400: '#fbbf24',
-                            500: '#f59e0b',
-                            600: '#d97706',
+                        lotus: {
+                            700: '#9b233b',
+                            600: '#a8324a',
+                            500: '#e05c72',
+                            400: '#f48c84',
+                            300: '#f9b4ad',
                         }
                     }
                 }
@@ -50,13 +53,14 @@
 
         body {
             font-family: 'Be Vietnam Pro', sans-serif;
-            background: radial-gradient(circle at 50% 20%, #0d325e 0%, #051329 70%, #020813 100%);
+            background: linear-gradient(180deg, #b8ecf5 0%, #d4f5ef 48%, #e9f7d6 100%);
             min-height: 100vh;
             margin: 0;
             overflow-x: hidden;
+            color: #0f3d38;
         }
 
-        /* Khung trình chiếu chuẩn 16:9 cho màn hình máy chiếu / Slide */
+        /* Khung trình chiếu chuẩn 16:9 đồng bộ nền Slide Canva Hoa Sen & Núi Non */
         .stage-wrapper {
             width: 100vw;
             min-height: 100vh;
@@ -70,9 +74,9 @@
             width: 100%;
             max-width: calc((100vh - 24px) * (16 / 9));
             aspect-ratio: 16 / 9;
-            background: linear-gradient(145deg, rgba(10, 35, 69, 0.92) 0%, rgba(5, 20, 42, 0.96) 100%);
-            border: 1px solid rgba(124, 194, 249, 0.25);
-            box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8), 0 0 40px rgba(39, 128, 214, 0.2);
+            background: linear-gradient(180deg, #c8f2f8 0%, #dff8f6 38%, #f2fbe4 76%, #eef6cf 100%);
+            border: 2px solid rgba(22, 121, 111, 0.22);
+            box-shadow: 0 25px 55px -15px rgba(15, 61, 56, 0.25), 0 0 35px rgba(255, 255, 255, 0.8) inset;
             position: relative;
             overflow: hidden;
             display: flex;
@@ -93,36 +97,31 @@
             }
         }
 
-        /* Hiệu ứng sóng biển nền */
-        .wave-bg {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 200%;
-            height: 140px;
-            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z' fill='rgba(39, 128, 214, 0.08)'/%3E%3C/svg%3E") repeat-x;
-            background-size: 50% 100%;
-            animation: waveMove 18s linear infinite;
-            pointer-events: none;
-            z-index: 0;
+        /* Nút PLAY 3D màu xanh ngọc lục bảo giống hệt nút PLAY trên Slide Canva */
+        .btn-canva-play {
+            background: linear-gradient(180deg, #27d87f 0%, #19b868 100%);
+            color: #ffffff;
+            border: 3px solid #7bf2b8;
+            box-shadow: 0 8px 0 #136f63, 0 14px 28px rgba(19, 111, 99, 0.32), inset 0 3px 0 rgba(255, 255, 255, 0.45);
+            transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+            text-shadow: 0 2px 4px rgba(15, 61, 56, 0.25);
+        }
+        .btn-canva-play:hover {
+            transform: translateY(-2px);
+            background: linear-gradient(180deg, #32e38a 0%, #1ec773 100%);
+            box-shadow: 0 10px 0 #136f63, 0 18px 34px rgba(19, 111, 99, 0.38), inset 0 3px 0 rgba(255, 255, 255, 0.55);
+        }
+        .btn-canva-play:active {
+            transform: translateY(5px);
+            box-shadow: 0 3px 0 #136f63, 0 6px 14px rgba(19, 111, 99, 0.25);
         }
 
-        .wave-bg-2 {
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 200%;
-            height: 110px;
-            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z' fill='rgba(56, 189, 248, 0.06)'/%3E%3C/svg%3E") repeat-x;
-            background-size: 50% 100%;
-            animation: waveMove 12s linear infinite reverse;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        @keyframes waveMove {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
+        /* Thẻ kính mờ sáng trong trẻo trên nền thiên nhiên */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.86);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(115, 177, 161, 0.42);
+            box-shadow: 0 10px 30px -8px rgba(17, 94, 86, 0.12);
         }
 
         /* Hiệu ứng nút đáp án */
@@ -130,12 +129,15 @@
             transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
             position: relative;
             overflow: hidden;
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid rgba(115, 177, 161, 0.5);
+            color: #0f3d38;
         }
         .option-btn:not(:disabled):hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px -5px rgba(56, 189, 248, 0.35);
-            border-color: rgba(56, 189, 248, 0.8);
-            background: rgba(19, 68, 126, 0.75);
+            box-shadow: 0 12px 24px -6px rgba(30, 199, 115, 0.25);
+            border-color: #1ec773;
+            background: #ffffff;
         }
         .option-btn:not(:disabled):active {
             transform: translateY(0px) scale(0.99);
@@ -143,19 +145,21 @@
 
         /* Trạng thái Đúng / Sai */
         .option-correct {
-            background: linear-gradient(135deg, rgba(16, 185, 129, 0.28) 0%, rgba(5, 150, 105, 0.45) 100%) !important;
-            border-color: #34d399 !important;
-            box-shadow: 0 0 25px rgba(16, 185, 129, 0.4) !important;
+            background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%) !important;
+            border-color: #10b981 !important;
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.28) !important;
+            color: #064e3b !important;
         }
         .option-wrong {
-            background: linear-gradient(135deg, rgba(239, 68, 68, 0.28) 0%, rgba(185, 28, 28, 0.45) !important);
-            border-color: #f87171 !important;
-            box-shadow: 0 0 25px rgba(239, 68, 68, 0.35) !important;
+            background: linear-gradient(135deg, #ffe4e6 0%, #fecdd3 100%) !important;
+            border-color: #f43f5e !important;
+            box-shadow: 0 6px 20px rgba(244, 63, 94, 0.25) !important;
+            color: #881337 !important;
             animation: shakeError 0.45s cubic-bezier(.36,.07,.19,.97) both;
         }
         .option-dimmed {
-            opacity: 0.48;
-            filter: grayscale(35%);
+            opacity: 0.55;
+            filter: grayscale(25%);
         }
 
         @keyframes shakeError {
@@ -188,24 +192,32 @@
             animation: popScale 0.35s ease-out forwards;
         }
 
+        @keyframes floatGentle {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+        }
+        .animate-float {
+            animation: floatGentle 4.5s ease-in-out infinite;
+        }
+
         /* Tùy chỉnh thanh cuộn mảnh */
         ::-webkit-scrollbar {
             width: 6px;
             height: 6px;
         }
         ::-webkit-scrollbar-track {
-            background: rgba(4, 16, 34, 0.4);
+            background: rgba(200, 242, 248, 0.4);
         }
         ::-webkit-scrollbar-thumb {
-            background: rgba(73, 163, 242, 0.4);
+            background: rgba(22, 121, 111, 0.35);
             border-radius: 9999px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: rgba(73, 163, 242, 0.7);
+            background: rgba(22, 121, 111, 0.65);
         }
     </style>
 </head>
-<body class="text-white antialiased">
+<body class="text-jade-900 antialiased">
 
     <div class="stage-wrapper">
         <!-- Khung chính tỷ lệ 16:9 -->
@@ -216,36 +228,91 @@
 
             <!-- Thông báo nổi (Toast) khi đảo đáp án ở lượt chơi lại -->
             <div id="shuffle-toast" class="hidden absolute top-16 left-1/2 -translate-x-1/2 z-50 pointer-events-none">
-                <div class="flex items-center gap-2.5 px-4 py-2.5 rounded-2xl bg-emerald-950/95 border border-emerald-400/60 text-emerald-200 text-xs md:text-sm font-bold shadow-2xl backdrop-blur-md animate-pop">
-                    <i class="fa-solid fa-shuffle text-amber-400"></i>
+                <div class="flex items-center gap-2.5 px-4 py-2.5 rounded-2xl bg-emerald-700 text-white border border-emerald-300 text-xs md:text-sm font-bold shadow-xl animate-pop">
+                    <i class="fa-solid fa-shuffle text-amber-300"></i>
                     <span id="shuffle-toast-text">Đã tự động đảo vị trí các đáp án A, B, C, D!</span>
                 </div>
             </div>
 
-            <!-- Sóng biển trang trí dưới đáy -->
-            <div class="wave-bg"></div>
-            <div class="wave-bg-2"></div>
+            <!-- ================= HỌA TIẾT NỀN ĐỒNG BỘ SLIDE CANVA (NÚI NON, MÂY, CHIM BAY & HOA SEN HỒNG) ================= -->
+            <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+                <!-- Núi non bên trái & Mây xanh lục nhạt -->
+                <svg class="absolute bottom-0 left-0 w-[44%] max-w-[540px] h-auto opacity-85" viewBox="0 0 500 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Dãy núi xa -->
+                    <path d="M-20 360 L45 110 C60 80 88 80 104 110 L175 245 L225 140 C240 112 268 112 282 140 L370 360 Z" fill="#88c3a8" fill-opacity="0.65"/>
+                    <!-- Dãy núi gần -->
+                    <path d="M-30 360 L15 160 C30 125 60 125 78 160 L145 300 L195 195 C210 168 238 168 254 195 L335 360 Z" fill="#67a693" fill-opacity="0.75"/>
+                    <!-- Đám mây xanh cốm -->
+                    <path d="M-10 305 Q35 270 85 292 Q125 262 170 295 Q210 285 235 320 L-10 360 Z" fill="#9fd69c" fill-opacity="0.75"/>
+                    <!-- Hoa sen hồng lớn & lá sen (Đồng bộ góc trái Slide Canva) -->
+                    <g class="animate-float">
+                        <!-- Cuống sen -->
+                        <path d="M92 360 Q98 300 84 252" stroke="#2d6e4e" stroke-width="4.5" stroke-linecap="round"/>
+                        <path d="M135 360 Q145 290 155 235" stroke="#2d6e4e" stroke-width="5" stroke-linecap="round"/>
+                        <path d="M210 360 Q205 320 218 288" stroke="#2d6e4e" stroke-width="4" stroke-linecap="round"/>
+                        <!-- Đài sen xanh -->
+                        <ellipse cx="83" cy="250" rx="18" ry="12" transform="rotate(-18 83 250)" fill="#58a55c"/>
+                        <ellipse cx="83" cy="246" rx="15" ry="7" transform="rotate(-18 83 246)" fill="#96d476"/>
+                        <circle cx="79" cy="246" r="2" fill="#2d6e4e"/>
+                        <circle cx="86" cy="244" r="2" fill="#2d6e4e"/>
+                        <circle cx="83" cy="249" r="2" fill="#2d6e4e"/>
+                        <!-- Bông sen hồng chính -->
+                        <path d="M155 235 C120 230 102 195 118 172 C135 185 148 205 155 235 Z" fill="#f38379"/>
+                        <path d="M155 235 C190 230 208 195 192 172 C175 185 162 205 155 235 Z" fill="#f38379"/>
+                        <path d="M155 235 C125 215 122 175 142 155 C152 175 156 205 155 235 Z" fill="#f79f95"/>
+                        <path d="M155 235 C185 215 188 175 168 155 C158 175 154 205 155 235 Z" fill="#f79f95"/>
+                        <path d="M155 238 C138 205 142 165 155 145 C168 165 172 205 155 238 Z" fill="#fbc2eb"/>
+                        <path d="M155 238 C138 205 142 165 155 145 C168 165 172 205 155 238 Z" fill="#fcd0c8" fill-opacity="0.85"/>
+                        <!-- Bông sen nhỏ bên cạnh -->
+                        <path d="M218 288 C196 282 190 258 202 245 C212 255 216 270 218 288 Z" fill="#f48c84"/>
+                        <path d="M218 288 C240 282 246 258 234 245 C224 255 220 270 218 288 Z" fill="#f48c84"/>
+                        <path d="M218 290 C206 268 210 245 218 234 C226 245 230 268 218 290 Z" fill="#fabbb4"/>
+                        <!-- Chuồn chuồn nhỏ bay trên hoa sen -->
+                        <g transform="translate(182, 128) rotate(-22)">
+                            <line x1="0" y1="0" x2="26" y2="12" stroke="#d9534f" stroke-width="2.5" stroke-linecap="round"/>
+                            <ellipse cx="8" cy="-5" rx="11" ry="3" transform="rotate(-25 8 -5)" fill="#f7a97e" fill-opacity="0.75"/>
+                            <ellipse cx="10" cy="7" rx="10" ry="2.8" transform="rotate(20 10 7)" fill="#f7a97e" fill-opacity="0.75"/>
+                        </g>
+                    </g>
+                </svg>
+
+                <!-- Núi non, Mây vân cổ & Đàn chim bay bên phải (Đồng bộ góc phải Slide Canva) -->
+                <svg class="absolute bottom-0 right-0 w-[46%] max-w-[560px] h-auto opacity-85" viewBox="0 0 520 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Đàn chim bay -->
+                    <path d="M260 95 Q268 85 276 94 Q284 85 292 95" stroke="#2d6e5e" stroke-width="3" stroke-linecap="round" fill="none"/>
+                    <path d="M315 72 Q322 64 329 71 Q336 64 343 72" stroke="#2d6e5e" stroke-width="2.6" stroke-linecap="round" fill="none"/>
+                    <path d="M225 130 Q232 123 238 129 Q244 123 251 130" stroke="#2d6e5e" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                    <path d="M180 122 Q186 116 192 121 Q198 116 204 122" stroke="#2d6e5e" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+                    <!-- Mây vân phương Đông màu xanh ngọc trầm -->
+                    <path d="M370 115 Q395 95 425 108 Q455 88 485 110 Q515 105 530 130 L355 130 Z" fill="#5e9e91" fill-opacity="0.75"/>
+                    <path d="M410 165 Q440 142 475 158 Q505 148 530 175 L395 180 Z" fill="#5e9e91" fill-opacity="0.65"/>
+                    <!-- Núi xanh ngọc bên phải -->
+                    <path d="M160 360 L265 185 C285 152 322 152 342 185 L445 360 Z" fill="#82bda5" fill-opacity="0.7"/>
+                    <path d="M275 360 L375 162 C396 128 435 128 456 162 L545 360 Z" fill="#6ca895" fill-opacity="0.75"/>
+                    <path d="M130 360 L235 235 C258 208 295 208 318 235 L430 360 Z" fill="#b7e2b5" fill-opacity="0.75"/>
+                </svg>
+            </div>
 
             <!-- ================= THANH ĐIỀU HƯỚNG TRÊN CÙNG (TOP BAR) ================= -->
-            <header class="relative z-20 flex flex-wrap items-center justify-between gap-2 px-4 py-2.5 md:px-7 md:py-3.5 bg-ocean-950/70 backdrop-blur-md border-b border-sky-400/20 shrink-0">
+            <header class="relative z-20 flex flex-wrap items-center justify-between gap-2 px-4 py-2.5 md:px-7 md:py-3 bg-white/75 backdrop-blur-md border-b border-jade-700/20 shrink-0 shadow-sm">
                 <!-- Nút Quay lại Slide & Cài đặt link Slide -->
                 <div class="flex items-center gap-2">
                     <button id="btn-back-slide-top" onclick="handleBackToSlide()" 
-                        class="group flex items-center gap-2 px-3.5 py-2 rounded-xl bg-gradient-to-r from-amber-500/20 to-amber-600/20 hover:from-amber-500 hover:to-amber-600 text-amber-300 hover:text-slate-950 border border-amber-400/40 font-semibold text-xs md:text-sm transition-all duration-200 shadow-sm"
+                        class="group flex items-center gap-2 px-3.5 py-2 rounded-xl bg-jade-700 hover:bg-jade-800 text-white font-bold text-xs md:text-sm transition-all duration-200 shadow-sm"
                         title="Quay lại Slide bài thuyết trình">
                         <i class="fa-solid fa-arrow-left-long transition-transform group-hover:-translate-x-1"></i>
                         <span>Quay lại Slide</span>
                     </button>
                     <button onclick="openSlideConfigModal()" 
-                        class="p-2 rounded-xl bg-ocean-800/80 hover:bg-ocean-700 text-sky-300 border border-sky-400/25 text-xs md:text-sm transition"
+                        class="p-2 rounded-xl bg-jade-100 hover:bg-emerald-100 text-jade-800 border border-jade-700/25 text-xs md:text-sm transition"
                         title="Cấu hình đường dẫn Slide thuyết trình (Canva / PowerPoint / Google Slides)">
                         <i class="fa-solid fa-link"></i>
                     </button>
-                    <div class="hidden xl:flex items-center gap-2 pl-2 border-l border-sky-400/20">
-                        <span class="px-2.5 py-1 rounded-lg bg-sky-500/20 border border-sky-400/30 text-sky-300 font-bold text-xs tracking-wide">
-                            PHẦN VII
+                    <div class="hidden xl:flex items-center gap-2 pl-2 border-l border-jade-700/20">
+                        <span class="px-2.5 py-1 rounded-lg bg-lotus-600/15 border border-lotus-600/30 text-lotus-700 font-extrabold text-xs tracking-wide">
+                            VII. CÂU HỎI
                         </span>
-                        <span class="text-xs md:text-sm font-medium text-sky-100/90 truncate max-w-[300px]">
+                        <span class="text-xs md:text-sm font-bold text-jade-900 truncate max-w-[320px]">
                             Phong cách chức năng ngôn ngữ chính luận
                         </span>
                     </div>
@@ -254,30 +321,30 @@
                 <!-- Bảng trạng thái Điểm số / Câu hỏi / Âm thanh / Toàn màn hình -->
                 <div class="flex items-center gap-2 md:gap-3">
                     <!-- Bộ đếm chuỗi trả lời đúng (Streak) -->
-                    <div id="streak-badge" class="hidden items-center gap-1.5 px-3 py-1.5 rounded-xl bg-orange-500/20 border border-orange-400/40 text-orange-300 text-xs md:text-sm font-bold animate-pop">
-                        <i class="fa-solid fa-fire-flame-curved text-orange-400"></i>
+                    <div id="streak-badge" class="hidden items-center gap-1.5 px-3 py-1.5 rounded-xl bg-amber-500/20 border border-amber-500/40 text-amber-900 text-xs md:text-sm font-bold animate-pop">
+                        <i class="fa-solid fa-fire-flame-curved text-orange-500"></i>
                         <span id="streak-text">Chuỗi 2</span>
                     </div>
 
                     <!-- Điểm số hiện tại -->
-                    <div class="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-ocean-900/90 border border-sky-400/30 shadow-inner">
-                        <i class="fa-solid fa-star text-amber-400 text-sm"></i>
-                        <span class="text-xs text-sky-200/80 hidden sm:inline">Điểm:</span>
-                        <span id="score-display" class="font-extrabold text-sm md:text-base text-amber-300 tabular-nums">0</span>
-                        <span class="text-xs text-sky-400/70">/ 80</span>
+                    <div class="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white border border-jade-700/30 shadow-sm">
+                        <i class="fa-solid fa-star text-amber-500 text-sm"></i>
+                        <span class="text-xs text-jade-800 font-semibold hidden sm:inline">Điểm:</span>
+                        <span id="score-display" class="font-extrabold text-sm md:text-base text-lotus-700 tabular-nums">0</span>
+                        <span class="text-xs text-jade-700/80 font-semibold">/ 80</span>
                     </div>
 
                     <!-- Bật/Tắt Âm thanh -->
                     <button id="btn-sound-toggle" onclick="toggleSound()" 
-                        class="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-ocean-800/80 hover:bg-ocean-700 text-sky-200 border border-sky-400/30 text-xs md:text-sm font-medium transition"
+                        class="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-white hover:bg-jade-50 text-jade-900 border border-jade-700/30 text-xs md:text-sm font-semibold transition shadow-sm"
                         title="Bật / Tắt âm thanh hiệu ứng">
-                        <i id="sound-icon" class="fa-solid fa-volume-high text-emerald-400"></i>
+                        <i id="sound-icon" class="fa-solid fa-volume-high text-emerald-600"></i>
                         <span id="sound-label" class="hidden md:inline">Âm thanh: Bật</span>
                     </button>
 
                     <!-- Nút Toàn màn hình (16:9 Presentation) -->
                     <button onclick="toggleFullScreen()" 
-                        class="p-2 md:px-3 md:py-2 rounded-xl bg-ocean-800/80 hover:bg-ocean-700 text-sky-200 border border-sky-400/30 text-xs md:text-sm transition"
+                        class="p-2 md:px-3 md:py-2 rounded-xl bg-white hover:bg-jade-50 text-jade-900 border border-jade-700/30 text-xs md:text-sm transition shadow-sm"
                         title="Chế độ Toàn màn hình (Fullscreen 16:9)">
                         <i id="fullscreen-icon" class="fa-solid fa-expand"></i>
                     </button>
@@ -289,67 +356,66 @@
 
                 <!-- 1. MÀN HÌNH BẮT ĐẦU (START SCREEN) -->
                 <section id="screen-start" class="flex-1 flex flex-col items-center justify-center text-center my-auto max-w-4xl mx-auto w-full animate-slide-up">
-                    <!-- Huy hiệu chủ đề -->
-                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sky-500/15 border border-sky-400/40 text-sky-300 text-xs md:text-sm font-semibold mb-3 shadow-sm">
-                        <i class="fa-solid fa-feather-pointed text-amber-400"></i>
-                        <span>PHẦN VII • TRÒ CHƠI TƯƠNG TÁC CỦNG CỐ KIẾN THỨC</span>
+                    <!-- Huy hiệu chủ đề giống chữ đỏ hồng trên Slide Canva -->
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/90 border-2 border-lotus-500/40 text-lotus-700 text-xs md:text-sm font-extrabold mb-3 shadow-sm">
+                        <i class="fa-solid fa-spa text-lotus-500"></i>
+                        <span>VII. CÂU HỎI • TRÒ CHƠI CỦNG CỐ KIẾN THỨC</span>
                     </div>
 
                     <!-- Tiêu đề lớn -->
-                    <h1 class="text-2xl sm:text-3xl md:text-5xl font-extrabold tracking-tight text-white leading-tight mb-3">
+                    <h1 class="text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-jade-950 leading-tight mb-3 drop-shadow-sm">
                         PHONG CÁCH CHỨC NĂNG <br class="hidden sm:inline" />
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-300 via-cyan-200 to-amber-300">
+                        <span class="text-lotus-600">
                             NGÔN NGỮ CHÍNH LUẬN
                         </span>
                     </h1>
 
-                    <p class="text-sky-100/85 text-sm md:text-base max-w-2xl mb-6 leading-relaxed">
-                        Cùng ôn tập nhanh những nội dung trọng tâm vừa trình bày qua <strong>8 câu hỏi trắc nghiệm</strong>. 
-                        Mỗi câu trả lời sẽ có âm thanh báo hiệu và phần giải thích kiến thức Tiếng Việt chi tiết!
+                    <p class="text-jade-900/90 font-medium text-sm md:text-base max-w-2xl mb-6 leading-relaxed bg-white/65 backdrop-blur-sm px-5 py-2.5 rounded-2xl border border-jade-700/15">
+                        Cùng ôn tập nhanh nội dung bài thuyết trình qua <strong>8 câu hỏi trắc nghiệm</strong>. 
+                        Mỗi câu trả lời đều có hiệu ứng âm thanh và giải thích kiến thức Tiếng Việt chi tiết!
                     </p>
 
                     <!-- Thẻ thông tin tóm tắt trò chơi -->
-                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 w-full max-w-3xl mb-7">
-                        <div class="bg-ocean-900/75 border border-sky-400/25 rounded-2xl p-3.5 flex flex-col items-center">
-                            <div class="w-9 h-9 rounded-xl bg-sky-500/20 text-sky-300 flex items-center justify-center mb-1.5 text-base">
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 w-full max-w-3xl mb-8">
+                        <div class="glass-card rounded-2xl p-3.5 flex flex-col items-center">
+                            <div class="w-9 h-9 rounded-xl bg-emerald-500/15 text-emerald-700 flex items-center justify-center mb-1.5 text-base">
                                 <i class="fa-solid fa-list-check"></i>
                             </div>
-                            <span class="text-xs text-sky-200/70">Số lượng</span>
-                            <span class="text-sm md:text-base font-bold text-white">8 Câu hỏi</span>
+                            <span class="text-xs text-jade-800/80 font-medium">Số lượng</span>
+                            <span class="text-sm md:text-base font-extrabold text-jade-950">8 Câu hỏi</span>
                         </div>
 
-                        <div class="bg-ocean-900/75 border border-sky-400/25 rounded-2xl p-3.5 flex flex-col items-center">
-                            <div class="w-9 h-9 rounded-xl bg-amber-500/20 text-amber-300 flex items-center justify-center mb-1.5 text-base">
+                        <div class="glass-card rounded-2xl p-3.5 flex flex-col items-center">
+                            <div class="w-9 h-9 rounded-xl bg-amber-500/15 text-amber-600 flex items-center justify-center mb-1.5 text-base">
                                 <i class="fa-solid fa-trophy"></i>
                             </div>
-                            <span class="text-xs text-sky-200/70">Điểm tối đa</span>
-                            <span class="text-sm md:text-base font-bold text-amber-300">80 Điểm</span>
+                            <span class="text-xs text-jade-800/80 font-medium">Điểm tối đa</span>
+                            <span class="text-sm md:text-base font-extrabold text-amber-700">80 Điểm</span>
                         </div>
 
-                        <div class="bg-ocean-900/75 border border-sky-400/25 rounded-2xl p-3.5 flex flex-col items-center">
-                            <div class="w-9 h-9 rounded-xl bg-emerald-500/20 text-emerald-300 flex items-center justify-center mb-1.5 text-base">
+                        <div class="glass-card rounded-2xl p-3.5 flex flex-col items-center">
+                            <div class="w-9 h-9 rounded-xl bg-lotus-500/15 text-lotus-600 flex items-center justify-center mb-1.5 text-base">
                                 <i class="fa-solid fa-lightbulb"></i>
                             </div>
-                            <span class="text-xs text-sky-200/70">Sau mỗi câu</span>
-                            <span class="text-sm md:text-base font-bold text-emerald-300">Có giải thích</span>
+                            <span class="text-xs text-jade-800/80 font-medium">Sau mỗi câu</span>
+                            <span class="text-sm md:text-base font-extrabold text-lotus-700">Có giải thích</span>
                         </div>
 
-                        <div class="bg-ocean-900/75 border border-sky-400/25 rounded-2xl p-3.5 flex flex-col items-center">
-                            <div class="w-9 h-9 rounded-xl bg-purple-500/20 text-purple-300 flex items-center justify-center mb-1.5 text-base">
-                                <i class="fa-solid fa-keyboard"></i>
+                        <div class="glass-card rounded-2xl p-3.5 flex flex-col items-center">
+                            <div class="w-9 h-9 rounded-xl bg-teal-500/15 text-teal-700 flex items-center justify-center mb-1.5 text-base">
+                                <i class="fa-solid fa-shuffle"></i>
                             </div>
-                            <span class="text-xs text-sky-200/70">Phím tắt nhanh</span>
-                            <span class="text-sm md:text-base font-bold text-purple-200">Phím A, B, C, D</span>
+                            <span class="text-xs text-jade-800/80 font-medium">Chơi lại</span>
+                            <span class="text-sm md:text-base font-extrabold text-teal-800">Tự đảo đáp án</span>
                         </div>
                     </div>
 
-                    <!-- Nút hành động chính -->
+                    <!-- Nút PLAY 3D giống hệt thiết kế trên Slide Canva -->
                     <div class="flex flex-wrap items-center justify-center gap-4">
                         <button onclick="startQuiz()" 
-                            class="group relative inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 hover:from-amber-300 hover:to-orange-400 text-slate-950 font-extrabold text-base md:text-lg shadow-[0_0_30px_rgba(245,158,11,0.45)] hover:shadow-[0_0_40px_rgba(245,158,11,0.7)] transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0">
-                            <i class="fa-solid fa-play text-sm"></i>
-                            <span>BẮT ĐẦU TRÒ CHƠI</span>
-                            <i class="fa-solid fa-chevron-right text-sm transition-transform group-hover:translate-x-1"></i>
+                            class="btn-canva-play group relative inline-flex items-center gap-3.5 px-10 py-4 rounded-3xl font-extrabold text-lg md:text-2xl tracking-wider">
+                            <i class="fa-solid fa-play text-base md:text-xl"></i>
+                            <span>PLAY • BẮT ĐẦU</span>
                         </button>
                     </div>
                 </section>
@@ -359,28 +425,28 @@
                     
                     <!-- Thanh tiến độ & Thông tin câu hỏi hiện tại -->
                     <div class="mb-3">
-                        <div class="flex items-center justify-between text-xs md:text-sm font-semibold text-sky-200 mb-1.5">
+                        <div class="flex items-center justify-between text-xs md:text-sm font-bold text-jade-900 mb-1.5">
                             <div class="flex items-center gap-2">
-                                <span id="question-badge" class="px-3 py-1 rounded-lg bg-sky-500/25 border border-sky-400/40 text-sky-200 font-bold">
+                                <span id="question-badge" class="px-3 py-1 rounded-lg bg-jade-700 text-white font-extrabold shadow-sm">
                                     CÂU HỎI 1 / 8
                                 </span>
-                                <span id="question-category" class="text-sky-300/90 font-medium hidden sm:inline">
+                                <span id="question-category" class="text-lotus-700 font-bold hidden sm:inline">
                                     • Khái niệm & Phạm vi
                                 </span>
                             </div>
-                            <span class="text-amber-300 font-semibold">
+                            <span class="px-3 py-1 rounded-lg bg-amber-100 border border-amber-400/50 text-amber-900 font-bold">
                                 +10 điểm cho câu trả lời đúng
                             </span>
                         </div>
                         <!-- Thanh Progress Bar -->
-                        <div class="w-full h-2 bg-ocean-950/90 rounded-full overflow-hidden border border-sky-400/20">
-                            <div id="progress-bar" class="h-full bg-gradient-to-r from-sky-400 via-cyan-300 to-amber-400 transition-all duration-500 rounded-full" style="width: 12.5%"></div>
+                        <div class="w-full h-2.5 bg-white/80 rounded-full overflow-hidden border border-jade-700/25 p-0.5">
+                            <div id="progress-bar" class="h-full bg-gradient-to-r from-emerald-500 via-teal-500 to-lotus-500 transition-all duration-500 rounded-full" style="width: 12.5%"></div>
                         </div>
                     </div>
 
                     <!-- Khung nội dung câu hỏi -->
-                    <div id="question-card" class="bg-ocean-900/80 border border-sky-400/30 rounded-2xl p-4 md:p-5 shadow-lg mb-3">
-                        <h2 id="question-text" class="text-base sm:text-lg md:text-2xl font-bold text-white leading-snug">
+                    <div id="question-card" class="glass-card rounded-2xl p-4 md:p-5 mb-3">
+                        <h2 id="question-text" class="text-base sm:text-lg md:text-2xl font-extrabold text-jade-950 leading-snug">
                             Đang tải câu hỏi...
                         </h2>
                     </div>
@@ -391,7 +457,7 @@
                     </div>
 
                     <!-- Hộp Giải thích đáp án & Nút Câu tiếp theo (Ẩn cho đến khi người chơi chọn đáp án) -->
-                    <div id="explanation-panel" class="hidden mt-3 rounded-2xl p-3.5 md:p-4 border backdrop-blur-md transition-all">
+                    <div id="explanation-panel" class="hidden mt-3 rounded-2xl p-3.5 md:p-4 border-2 backdrop-blur-md transition-all shadow-md">
                         <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
                             <div class="flex items-start gap-3 flex-1">
                                 <div id="feedback-icon-box" class="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 text-lg font-bold mt-0.5">
@@ -400,10 +466,10 @@
                                 <div class="text-left">
                                     <div class="flex items-center gap-2 mb-0.5">
                                         <span id="feedback-title" class="font-extrabold text-sm md:text-base uppercase tracking-wide">
-                                            CHÍNH XÁC! +20 ĐIỂM
+                                            CHÍNH XÁC! +10 ĐIỂM
                                         </span>
                                     </div>
-                                    <p id="explanation-text" class="text-xs sm:text-sm text-sky-50/95 leading-relaxed">
+                                    <p id="explanation-text" class="text-xs sm:text-sm font-medium text-jade-950 leading-relaxed">
                                         Nội dung giải thích chi tiết tại đây...
                                     </p>
                                 </div>
@@ -411,7 +477,7 @@
 
                             <div class="w-full md:w-auto flex justify-end shrink-0">
                                 <button id="btn-next-question" onclick="nextQuestion()" 
-                                    class="w-full md:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-extrabold text-sm md:text-base shadow-lg transition transform hover:-translate-y-0.5">
+                                    class="w-full md:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-extrabold text-sm md:text-base shadow-md transition transform hover:-translate-y-0.5">
                                     <span id="btn-next-label">Câu tiếp theo</span>
                                     <i class="fa-solid fa-arrow-right"></i>
                                 </button>
@@ -426,57 +492,57 @@
                     <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-6 items-center my-auto">
                         
                         <!-- Cột trái: Điểm số & Danh hiệu -->
-                        <div class="lg:col-span-5 bg-ocean-900/85 border border-sky-400/30 rounded-3xl p-5 md:p-6 text-center flex flex-col items-center shadow-xl">
-                            <div id="result-badge-icon" class="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br from-amber-400/30 to-orange-500/30 border border-amber-400/50 flex items-center justify-center text-3xl md:text-4xl text-amber-300 mb-3 shadow-inner">
+                        <div class="lg:col-span-5 glass-card rounded-3xl p-5 md:p-6 text-center flex flex-col items-center">
+                            <div id="result-badge-icon" class="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br from-amber-100 to-amber-200 border-2 border-amber-400 flex items-center justify-center text-3xl md:text-4xl text-amber-600 mb-3 shadow-sm">
                                 <i class="fa-solid fa-medal"></i>
                             </div>
 
-                            <span class="text-xs font-bold uppercase tracking-widest text-sky-300 mb-1">
+                            <span class="text-xs font-extrabold uppercase tracking-widest text-lotus-700 mb-1">
                                 HOÀN THÀNH TRÒ CHƠI
                             </span>
-                            <h2 id="result-title" class="text-xl md:text-2xl font-extrabold text-white mb-1">
-                                Xuất sắc! Bậc thầy Ngôn ngữ
+                            <h2 id="result-title" class="text-xl md:text-2xl font-extrabold text-jade-950 mb-1">
+                                Xuất sắc! Bậc thầy Chính luận
                             </h2>
-                            <p id="result-subtitle" class="text-xs md:text-sm text-sky-200/80 mb-4">
+                            <p id="result-subtitle" class="text-xs md:text-sm text-jade-800 mb-4 font-medium">
                                 Bạn đã nắm rất vững kiến thức về phong cách chức năng ngôn ngữ chính luận.
                             </p>
 
                             <!-- Vòng điểm lớn -->
                             <div class="w-full grid grid-cols-2 gap-2.5 mb-5">
-                                <div class="bg-ocean-950/80 border border-sky-400/20 rounded-2xl p-3">
-                                    <div class="text-xs text-sky-300/80">Tổng điểm</div>
-                                    <div id="final-score" class="text-2xl md:text-3xl font-extrabold text-amber-400">80 / 80</div>
+                                <div class="bg-emerald-50/90 border border-emerald-400/40 rounded-2xl p-3">
+                                    <div class="text-xs text-jade-800 font-semibold">Tổng điểm</div>
+                                    <div id="final-score" class="text-2xl md:text-3xl font-extrabold text-lotus-700">80 / 80</div>
                                 </div>
-                                <div class="bg-ocean-950/80 border border-sky-400/20 rounded-2xl p-3">
-                                    <div class="text-xs text-sky-300/80">Số câu đúng</div>
-                                    <div id="final-correct" class="text-2xl md:text-3xl font-extrabold text-emerald-400">8 / 8 câu</div>
+                                <div class="bg-emerald-50/90 border border-emerald-400/40 rounded-2xl p-3">
+                                    <div class="text-xs text-jade-800 font-semibold">Số câu đúng</div>
+                                    <div id="final-correct" class="text-2xl md:text-3xl font-extrabold text-emerald-700">8 / 8 câu</div>
                                 </div>
                             </div>
 
                             <!-- Cụm nút Chơi lại & Quay lại Slide -->
                             <div class="flex flex-col sm:flex-row gap-2.5 w-full">
                                 <button onclick="restartQuiz()" 
-                                    class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-bold text-sm shadow-lg transition transform hover:-translate-y-0.5"
+                                    class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-bold text-sm shadow-md transition transform hover:-translate-y-0.5"
                                     title="Chơi lại từ đầu và tự động xáo trộn vị trí các đáp án A, B, C, D">
                                     <i class="fa-solid fa-shuffle"></i>
                                     <span>Chơi lại (Đảo đáp án)</span>
                                 </button>
                                 <button onclick="handleBackToSlide()" 
-                                    class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-extrabold text-sm shadow-lg transition transform hover:-translate-y-0.5">
+                                    class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-extrabold text-sm shadow-md transition transform hover:-translate-y-0.5">
                                     <i class="fa-solid fa-display"></i>
                                     <span>Quay lại Slide</span>
                                 </button>
                             </div>
                         </div>
 
-                        <!-- Cột phải: Bảng tóm tắt lại 5 câu hỏi & giải thích -->
-                        <div class="lg:col-span-7 bg-ocean-900/75 border border-sky-400/25 rounded-3xl p-4 md:p-5 flex flex-col max-h-[340px] md:max-h-[380px]">
-                            <div class="flex items-center justify-between pb-2.5 mb-2.5 border-b border-sky-400/20">
-                                <h3 class="font-bold text-sm md:text-base text-sky-200 flex items-center gap-2">
-                                    <i class="fa-solid fa-book-open-reader text-amber-400"></i>
-                                    <span>Tổng hợp đáp án & Kiến thức cốt lõi</span>
+                        <!-- Cột phải: Bảng tóm tắt lại 8 câu hỏi & giải thích -->
+                        <div class="lg:col-span-7 glass-card rounded-3xl p-4 md:p-5 flex flex-col max-h-[340px] md:max-h-[380px]">
+                            <div class="flex items-center justify-between pb-2.5 mb-2.5 border-b border-jade-700/20">
+                                <h3 class="font-extrabold text-sm md:text-base text-jade-950 flex items-center gap-2">
+                                    <i class="fa-solid fa-book-open-reader text-lotus-600"></i>
+                                    <span>Tổng hợp đáp án & Giải thích chi tiết (8 câu)</span>
                                 </h3>
-                                <span class="text-xs text-sky-300/70">Cuộn để xem chi tiết</span>
+                                <span class="text-xs text-jade-800/80 font-medium">Cuộn để xem chi tiết</span>
                             </div>
                             <div id="review-list" class="overflow-y-auto space-y-2.5 pr-1 flex-1">
                                 <!-- Render danh sách tổng kết câu hỏi bằng JS -->
@@ -489,10 +555,10 @@
             </div>
 
             <!-- ================= CHÂN TRANG (FOOTER NHỎ GỌN CHO SLIDE) ================= -->
-            <footer class="relative z-20 px-5 py-2 bg-ocean-950/60 border-t border-sky-400/15 flex items-center justify-between text-[11px] text-sky-300/70 shrink-0">
+            <footer class="relative z-20 px-5 py-2 bg-white/70 backdrop-blur-sm border-t border-jade-700/15 flex items-center justify-between text-[11px] text-jade-900/80 font-medium shrink-0">
                 <div class="flex items-center gap-2">
-                    <i class="fa-solid fa-compass text-amber-400"></i>
-                    <span>Thiết kế tối ưu tỷ lệ 16:9 cho trình chiếu Slide thuyết trình trên lớp</span>
+                    <i class="fa-solid fa-spa text-lotus-500"></i>
+                    <span>Thiết kế đồng bộ màu Slide Canva • Tối ưu tỷ lệ 16:9 cho trình chiếu trên lớp</span>
                 </div>
                 <div class="hidden sm:flex items-center gap-3">
                     <span>Phím tắt: <strong>A, B, C, D</strong> (Chọn đáp án) • <strong>Enter / Space</strong> (Câu tiếp theo)</span>
@@ -500,46 +566,46 @@
             </footer>
 
             <!-- ================= MODAL QUAY LẠI SLIDE / CẤU HÌNH LINK SLIDE ================= -->
-            <div id="slide-modal" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
-                <div class="bg-ocean-900 border border-sky-400/40 rounded-3xl max-w-md w-full p-6 shadow-2xl animate-pop">
+            <div id="slide-modal" class="hidden fixed inset-0 z-50 bg-jade-950/60 backdrop-blur-sm flex items-center justify-center p-4">
+                <div class="bg-white border-2 border-jade-600/40 rounded-3xl max-w-md w-full p-6 shadow-2xl animate-pop text-jade-950">
                     <div class="flex items-center justify-between mb-4">
                         <div class="flex items-center gap-2.5">
-                            <div class="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-400/40 text-amber-300 flex items-center justify-center">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-100 border border-emerald-400 text-emerald-700 flex items-center justify-center">
                                 <i class="fa-solid fa-display"></i>
                             </div>
                             <div>
-                                <h3 class="font-bold text-base text-white">Quay lại Slide Canva đang chiếu</h3>
-                                <p class="text-xs text-sky-300/80">Giữ nguyên trang Slide hiện tại không bị tải lại</p>
+                                <h3 class="font-extrabold text-base text-jade-950">Quay lại Slide Canva đang chiếu</h3>
+                                <p class="text-xs text-jade-700">Giữ nguyên trang Slide hiện tại không bị tải lại</p>
                             </div>
                         </div>
-                        <button onclick="closeSlideModal()" class="text-sky-300 hover:text-white p-1.5">
+                        <button onclick="closeSlideModal()" class="text-jade-700 hover:text-jade-950 p-1.5">
                             <i class="fa-solid fa-xmark text-lg"></i>
                         </button>
                     </div>
 
-                    <div class="p-3.5 rounded-2xl bg-amber-500/15 border border-amber-400/40 text-amber-100 text-xs md:text-sm leading-relaxed mb-4">
-                        <div class="font-bold text-amber-300 mb-1 flex items-center gap-1.5">
+                    <div class="p-3.5 rounded-2xl bg-amber-50 border border-amber-300 text-amber-950 text-xs md:text-sm leading-relaxed mb-4">
+                        <div class="font-bold text-amber-800 mb-1 flex items-center gap-1.5">
                             <i class="fa-solid fa-bolt"></i>
                             <span>Mẹo về ngay đúng Slide Canva đang chiếu:</span>
                         </div>
-                        Khi mở từ Canva, tab Slide gốc vẫn đang mở ngay bên dưới. Nếu trình duyệt chặn tự đóng tab, bạn chỉ cần nhấn phím tắt <kbd class="px-2 py-0.5 rounded bg-slate-900 border border-amber-400/50 text-amber-300 font-bold">Ctrl + W</kbd> (hoặc <kbd class="px-2 py-0.5 rounded bg-slate-900 border border-amber-400/50 text-amber-300 font-bold">Cmd + W</kbd> trên Mac) để đóng tab trò chơi này và lộ ra ngay Slide Canva!
+                        Khi mở từ Canva, tab Slide gốc vẫn đang mở ngay bên dưới. Nếu trình duyệt chặn tự đóng tab, bạn chỉ cần nhấn phím tắt <kbd class="px-2 py-0.5 rounded bg-white border border-amber-400 text-amber-900 font-bold">Ctrl + W</kbd> (hoặc <kbd class="px-2 py-0.5 rounded bg-white border border-amber-400 text-amber-900 font-bold">Cmd + W</kbd> trên Mac) để đóng tab trò chơi này và lộ ra ngay Slide Canva!
                     </div>
 
                     <div class="mb-4">
-                        <label class="block text-xs font-semibold text-sky-300 mb-1.5">
+                        <label class="block text-xs font-bold text-jade-800 mb-1.5">
                             Hoặc dán đường dẫn Slide (Canva / Google Slides / PowerPoint Web):
                         </label>
                         <input id="input-slide-url" type="url" placeholder="https://www.canva.com/design/..." 
-                            class="w-full px-3.5 py-2.5 rounded-xl bg-ocean-950 border border-sky-400/30 text-white text-sm focus:outline-none focus:border-amber-400">
+                            class="w-full px-3.5 py-2.5 rounded-xl bg-jade-50 border border-jade-600/30 text-jade-950 text-sm focus:outline-none focus:border-emerald-600">
                     </div>
 
                     <div class="flex flex-wrap items-center justify-end gap-2">
                         <button onclick="closeSlideModal()" 
-                            class="px-4 py-2.5 rounded-xl bg-ocean-800 hover:bg-ocean-700 text-sky-200 text-xs md:text-sm font-semibold transition">
+                            class="px-4 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-jade-900 text-xs md:text-sm font-bold transition">
                             Đóng hộp thoại
                         </button>
                         <button onclick="saveAndGoToSlide()" 
-                            class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 text-xs md:text-sm font-extrabold transition shadow-md">
+                            class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white text-xs md:text-sm font-extrabold transition shadow-md">
                             Lưu & Mở Slide
                         </button>
                     </div>
@@ -854,11 +920,11 @@
             const icon = document.getElementById('sound-icon');
             const label = document.getElementById('sound-label');
             if (soundEnabled) {
-                icon.className = 'fa-solid fa-volume-high text-emerald-400';
+                icon.className = 'fa-solid fa-volume-high text-emerald-600';
                 label.textContent = 'Âm thanh: Bật';
                 playClickSound();
             } else {
-                icon.className = 'fa-solid fa-volume-xmark text-rose-400';
+                icon.className = 'fa-solid fa-volume-xmark text-rose-500';
                 label.textContent = 'Âm thanh: Tắt';
             }
         }
@@ -938,14 +1004,14 @@
             q.options.forEach((optText, idx) => {
                 const btn = document.createElement('button');
                 btn.id = `option-btn-${idx}`;
-                btn.className = `option-btn group w-full text-left p-3.5 md:p-4 rounded-2xl bg-ocean-900/75 border border-sky-400/30 flex items-center gap-3.5 shadow-md`;
+                btn.className = `option-btn group w-full text-left p-3.5 md:p-4 rounded-2xl flex items-center gap-3.5 shadow-sm`;
                 btn.onclick = () => selectAnswer(idx);
 
                 btn.innerHTML = `
-                    <div id="option-badge-${idx}" class="w-9 h-9 md:w-10 md:h-10 rounded-xl bg-sky-500/20 border border-sky-400/40 text-sky-200 group-hover:bg-amber-400 group-hover:text-slate-950 group-hover:border-amber-300 font-extrabold text-sm md:text-base flex items-center justify-center shrink-0 transition-colors">
+                    <div id="option-badge-${idx}" class="w-9 h-9 md:w-10 md:h-10 rounded-xl bg-emerald-100 border border-emerald-400/50 text-jade-900 group-hover:bg-emerald-500 group-hover:text-white group-hover:border-emerald-600 font-extrabold text-sm md:text-base flex items-center justify-center shrink-0 transition-colors">
                         ${OPTION_LABELS[idx]}
                     </div>
-                    <span class="flex-1 text-sm sm:text-base font-medium text-sky-50 leading-snug">
+                    <span class="flex-1 text-sm sm:text-base font-bold text-jade-950 leading-snug">
                         ${optText}
                     </span>
                     <div id="option-status-${idx}" class="w-6 h-6 flex items-center justify-center shrink-0"></div>
@@ -989,12 +1055,12 @@
 
                 if (idx === q.correctIndex) {
                     btn.classList.add('option-correct');
-                    badge.className = 'w-9 h-9 md:w-10 md:h-10 rounded-xl bg-emerald-400 text-slate-950 font-extrabold text-sm md:text-base flex items-center justify-center shrink-0';
-                    status.innerHTML = '<i class="fa-solid fa-circle-check text-emerald-400 text-lg md:text-xl"></i>';
+                    badge.className = 'w-9 h-9 md:w-10 md:h-10 rounded-xl bg-emerald-600 text-white font-extrabold text-sm md:text-base flex items-center justify-center shrink-0';
+                    status.innerHTML = '<i class="fa-solid fa-circle-check text-emerald-600 text-lg md:text-xl"></i>';
                 } else if (idx === selectedIndex && !isCorrect) {
                     btn.classList.add('option-wrong');
-                    badge.className = 'w-9 h-9 md:w-10 md:h-10 rounded-xl bg-rose-500 text-white font-extrabold text-sm md:text-base flex items-center justify-center shrink-0';
-                    status.innerHTML = '<i class="fa-solid fa-circle-xmark text-rose-400 text-lg md:text-xl"></i>';
+                    badge.className = 'w-9 h-9 md:w-10 md:h-10 rounded-xl bg-rose-600 text-white font-extrabold text-sm md:text-base flex items-center justify-center shrink-0';
+                    status.innerHTML = '<i class="fa-solid fa-circle-xmark text-rose-600 text-lg md:text-xl"></i>';
                 } else {
                     btn.classList.add('option-dimmed');
                 }
@@ -1008,20 +1074,20 @@
             const explanationText = document.getElementById('explanation-text');
             const nextLabel = document.getElementById('btn-next-label');
 
-            expPanel.classList.remove('hidden', 'bg-emerald-950/75', 'border-emerald-400/50', 'bg-rose-950/75', 'border-rose-400/50');
+            expPanel.classList.remove('hidden', 'bg-emerald-50/95', 'border-emerald-500', 'bg-rose-50/95', 'border-rose-400');
             expPanel.classList.add('animate-slide-up');
 
             if (isCorrect) {
-                expPanel.classList.add('bg-emerald-950/75', 'border-emerald-400/50');
-                feedbackIconBox.className = 'w-10 h-10 rounded-xl bg-emerald-500/25 border border-emerald-400/50 text-emerald-300 flex items-center justify-center shrink-0 text-lg font-bold mt-0.5';
+                expPanel.classList.add('bg-emerald-50/95', 'border-emerald-500');
+                feedbackIconBox.className = 'w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center shrink-0 text-lg font-bold mt-0.5 shadow-sm';
                 feedbackIcon.className = 'fa-solid fa-check';
-                feedbackTitle.className = 'font-extrabold text-sm md:text-base text-emerald-300 uppercase tracking-wide';
+                feedbackTitle.className = 'font-extrabold text-sm md:text-base text-emerald-800 uppercase tracking-wide';
                 feedbackTitle.textContent = 'CHÍNH XÁC! +10 ĐIỂM';
             } else {
-                expPanel.classList.add('bg-rose-950/75', 'border-rose-400/50');
-                feedbackIconBox.className = 'w-10 h-10 rounded-xl bg-rose-500/25 border border-rose-400/50 text-rose-300 flex items-center justify-center shrink-0 text-lg font-bold mt-0.5';
+                expPanel.classList.add('bg-rose-50/95', 'border-rose-400');
+                feedbackIconBox.className = 'w-10 h-10 rounded-xl bg-rose-600 text-white flex items-center justify-center shrink-0 text-lg font-bold mt-0.5 shadow-sm';
                 feedbackIcon.className = 'fa-solid fa-xmark';
-                feedbackTitle.className = 'font-extrabold text-sm md:text-base text-rose-300 uppercase tracking-wide';
+                feedbackTitle.className = 'font-extrabold text-sm md:text-base text-rose-800 uppercase tracking-wide';
                 feedbackTitle.textContent = `CHƯA CHÍNH XÁC! ĐÁP ÁN ĐÚNG LÀ ${OPTION_LABELS[q.correctIndex]}`;
             }
 
@@ -1066,17 +1132,17 @@
             if (score === maxScore) {
                 titleEl.textContent = 'Xuất sắc! Bậc thầy Chính luận';
                 subEl.textContent = 'Tuyệt vời! Bạn đã trả lời chính xác tuyệt đối 8/8 câu hỏi về phong cách chức năng ngôn ngữ chính luận.';
-                badgeIcon.innerHTML = '<i class="fa-solid fa-crown text-amber-300"></i>';
+                badgeIcon.innerHTML = '<i class="fa-solid fa-crown text-amber-500"></i>';
                 startConfetti();
             } else if (score >= 50) {
                 titleEl.textContent = 'Rất tốt! Nắm vững kiến thức';
                 subEl.textContent = 'Bạn đã hiểu rõ các đặc trưng cốt lõi của phong cách ngôn ngữ chính luận. Hãy xem lại phần giải thích bên cạnh nhé!';
-                badgeIcon.innerHTML = '<i class="fa-solid fa-medal text-sky-300"></i>';
+                badgeIcon.innerHTML = '<i class="fa-solid fa-medal text-emerald-600"></i>';
                 startConfetti();
             } else {
                 titleEl.textContent = 'Cố gắng lên nhé!';
                 subEl.textContent = 'Hãy ôn lại phần giải thích chi tiết bên phải và bấm "Chơi lại (Đảo đáp án)" để đạt điểm tối đa!';
-                badgeIcon.innerHTML = '<i class="fa-solid fa-book-open text-emerald-300"></i>';
+                badgeIcon.innerHTML = '<i class="fa-solid fa-book-open text-lotus-600"></i>';
             }
 
             playVictorySound();
@@ -1092,22 +1158,22 @@
                 const isCorrect = userAns && userAns.isCorrect;
 
                 const item = document.createElement('div');
-                item.className = `p-3 rounded-2xl border ${isCorrect ? 'bg-emerald-950/35 border-emerald-400/30' : 'bg-rose-950/35 border-rose-400/30'} text-left`;
+                item.className = `p-3.5 rounded-2xl border ${isCorrect ? 'bg-emerald-50/90 border-emerald-400/60' : 'bg-rose-50/90 border-rose-300'} text-left`;
 
                 item.innerHTML = `
                     <div class="flex items-start justify-between gap-2 mb-1">
-                        <span class="text-xs font-bold ${isCorrect ? 'text-emerald-300' : 'text-rose-300'}">
+                        <span class="text-xs font-extrabold ${isCorrect ? 'text-emerald-800' : 'text-rose-700'}">
                             Câu ${idx + 1}: ${isCorrect ? 'Đúng (+10đ)' : 'Sai (0đ)'}
                         </span>
-                        <span class="text-[11px] px-2 py-0.5 rounded bg-ocean-950/70 text-sky-300">
+                        <span class="text-[11px] px-2 py-0.5 rounded-md bg-white border border-jade-700/20 text-jade-900 font-bold">
                             Đáp án đúng: ${OPTION_LABELS[q.correctIndex]}
                         </span>
                     </div>
-                    <p class="text-xs md:text-sm font-bold text-white mb-1">${q.question}</p>
-                    <p class="text-xs text-emerald-300 font-semibold mb-1">
+                    <p class="text-xs md:text-sm font-extrabold text-jade-950 mb-1">${q.question}</p>
+                    <p class="text-xs text-emerald-800 font-bold mb-1">
                         <i class="fa-solid fa-check mr-1"></i>${OPTION_LABELS[q.correctIndex]}. ${q.options[q.correctIndex]}
                     </p>
-                    <p class="text-[11px] md:text-xs text-sky-100/80 leading-relaxed">
+                    <p class="text-[11px] md:text-xs text-jade-900/90 leading-relaxed">
                         ${q.explanation}
                     </p>
                 `;
